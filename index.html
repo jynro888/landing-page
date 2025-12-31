@@ -17,28 +17,31 @@ html, body {
 }
 a { text-decoration:none; }
 
-/* HEADER */
+/* HEADER avec <img> pour full image */
 header {
-  height:100vh;
+  position: relative;
+  width: 100%;
   display:flex;
   justify-content:center;
   align-items:center;
-  text-align:center;
-  background: url('images/header the tribe.png') no-repeat center top;
-  background-size: 120%;
-  position: relative;
+}
+header img.hero-img {
+  width: 100%;
+  height: auto; /* garde le ratio original */
+  display: block;
+}
+.hero-text {
+  position: absolute;
+  top:50%;
+  left:50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
   color:#fff;
+  max-width:900px;
+  padding:0 20px;
 }
-header::before {
-  content:'';
-  position:absolute;
-  inset:0;
-  background: rgba(0,0,0,0.45);
-  z-index:0;
-}
-header > * { position:relative; z-index:1; max-width:900px; padding:0 20px; margin:0; }
-header h1 { font-size: 3rem; line-height:1.2; margin-bottom:1rem; }
-header p { font-size:1.25rem; margin-bottom:2rem; }
+.hero-text h1 { font-size:3rem; line-height:1.2; margin-bottom:1rem; }
+.hero-text p { font-size:1.25rem; margin-bottom:2rem; }
 .btn { padding:14px 28px; background:#fff; color:#111; border-radius:6px; font-weight:600; transition:0.3s; display:inline-block; }
 .btn:hover { background:#eee; }
 
@@ -94,8 +97,8 @@ p.lead { text-align:center; font-size:1.15rem; max-width:800px; margin:0 auto 2r
 footer { text-align:center; padding:30px 20px; font-size:14px; color:#666; background:#f9f9f9; }
 
 @media(max-width:768px){
-  header h1 { font-size:2.25rem; }
-  header p { font-size:1rem; }
+  .hero-text h1 { font-size:2.25rem; }
+  .hero-text p { font-size:1rem; }
   .process { flex-direction:column; }
 }
 </style>
@@ -104,7 +107,8 @@ footer { text-align:center; padding:30px 20px; font-size:14px; color:#666; backg
 
 <!-- HEADER -->
 <header>
-  <div>
+  <img src="images/header the tribe.png" alt="Hero Image" class="hero-img">
+  <div class="hero-text">
     <h1>Tribe Agency</h1>
     <p>Helping startups scale with growth marketing, strategic advisory, and financial discipline.</p>
     <a href="#contact" class="btn">Book a free call</a>
