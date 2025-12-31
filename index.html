@@ -5,153 +5,153 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Tribe Agency</title>
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
 
-  body, html { margin:0; padding:0; font-family:'Inter', sans-serif; scroll-behavior:smooth; color:#111; }
-  a { text-decoration:none; }
+body, html { margin:0; padding:0; font-family:'Inter', sans-serif; scroll-behavior:smooth; color:#111; width:100%; }
+a { text-decoration:none; }
 
-  /* HEADER */
-  header {
-    height:100vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    text-align:center;
-    background: url('images/header the tribe.png') no-repeat center center/cover;
-    position: relative;
-    color:#fff;
-  }
-  header::before {
-    content:'';
-    position:absolute;
-    inset:0;
-    background: rgba(0,0,0,0.45);
-    z-index:0;
-  }
-  header > * { position:relative; z-index:1; max-width:900px; padding:0 20px; }
-  header h1 { font-size: 3rem; line-height:1.2; margin-bottom:1rem; }
-  header p { font-size:1.25rem; margin-bottom:2rem; }
+header {
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  background: url('images/header the tribe.png') no-repeat center top;
+  background-size: 120%;
+  position: relative;
+  color:#fff;
+}
+header::before {
+  content:'';
+  position:absolute;
+  inset:0;
+  background: rgba(0,0,0,0.45);
+  z-index:0;
+}
+header > * { position:relative; z-index:1; max-width:900px; padding:0 20px; }
+header h1 { font-size: 3rem; line-height:1.2; margin-bottom:1rem; }
+header p { font-size:1.25rem; margin-bottom:2rem; }
+.btn { padding:14px 28px; background:#fff; color:#111; border-radius:6px; font-weight:600; transition:0.3s; display:inline-block; }
+.btn:hover { background:#eee; }
 
-  .btn { padding:14px 28px; background:#fff; color:#111; border-radius:6px; font-weight:600; transition:0.3s; display:inline-block; }
-  .btn:hover { background:#eee; }
+/* Sections */
+section { padding:80px 20px; width:100vw; box-sizing:border-box; }
+h2 { text-align:center; font-size:2.25rem; margin-bottom:1rem; }
+p.lead { text-align:center; font-size:1.15rem; max-width:800px; margin:0 auto 2rem auto; line-height:1.5; }
 
-  /* SECTIONS */
-  section { padding:80px 20px; max-width:1200px; margin:auto; }
-  h2 { text-align:center; font-size:2.25rem; margin-bottom:1rem; }
-  p.lead { text-align:center; font-size:1.15rem; max-width:800px; margin:0 auto 2rem auto; line-height:1.5; }
+/* Cards */
+.grid { display:grid; grid-template-columns: repeat(auto-fit,minmax(280px,1fr)); gap:24px; margin-top:40px; }
+.card {
+  background:#fff;
+  padding:30px;
+  border-radius:12px;
+  box-shadow:0 6px 18px rgba(0,0,0,0.06);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.card:hover { transform:translateY(-6px); box-shadow:0 12px 24px rgba(0,0,0,0.08); }
+.card strong { display:block; font-size:1.25rem; margin-bottom:10px; }
 
-  /* GRID CARDS */
-  .grid { display:grid; grid-template-columns: repeat(auto-fit,minmax(280px,1fr)); gap:24px; margin-top:40px; }
-  .card {
-    background:#fff;
-    padding:30px;
-    border-radius:12px;
-    box-shadow:0 6px 18px rgba(0,0,0,0.06);
-    transition: transform 0.3s, box-shadow 0.3s;
-  }
-  .card:hover { transform:translateY(-6px); box-shadow:0 12px 24px rgba(0,0,0,0.08); }
-  .card strong { display:block; font-size:1.25rem; margin-bottom:10px; }
+/* Our Process */
+#our-process { background-color: #d8f0e1; padding:100px 20px; }
+.process { display:flex; flex-wrap:wrap; align-items:center; gap:40px; max-width:1200px; margin:auto; }
+.process-text { flex:1; min-width:320px; }
+.process-text h3 { font-size:1.75rem; margin-bottom:1rem; }
+.process-text ol { margin-left:20px; line-height:1.6; }
+.process-img { flex:1; min-width:320px; }
+.process-img img { width:100%; border-radius:12px; }
 
-  /* PROCESS */
-  .process { display:flex; flex-wrap:wrap; align-items:center; gap:40px; margin-top:60px; }
-  .process-text { flex:1; min-width:320px; }
-  .process-text h3 { font-size:1.75rem; margin-bottom:1rem; }
-  .process-text ol { margin-left:20px; line-height:1.6; }
-  .process-img { flex:1; min-width:320px; }
-  .process-img img { width:100%; border-radius:12px; }
+/* Client logos */
+.logos { display:flex; flex-wrap:wrap; justify-content:center; align-items:center; gap:40px; margin-top:40px;}
+.logos img { max-height:50px; object-fit:contain; filter: grayscale(1); opacity:0.7; transition:0.3s; }
+.logos img:hover { filter:none; opacity:1; }
 
-  /* CLIENT LOGOS */
-  .logos { display:flex; flex-wrap:wrap; justify-content:center; align-items:center; gap:40px; margin-top:40px; }
-  .logos img { max-height:50px; object-fit:contain; filter: grayscale(1); opacity:0.7; transition:0.3s; }
-  .logos img:hover { filter:none; opacity:1; }
+/* Contact */
+#contact { text-align:center; background:#111; color:#fff; padding:80px 20px; }
+#contact h2 { color:#fff; }
+#contact p { color:#ccc; margin-bottom:2rem; font-size:1.2rem; }
+#contact .btn { background:#fff; color:#111; }
+#contact .btn:hover { background:#eee; }
 
-  /* CONTACT */
-  #contact { text-align:center; background:#111; color:#fff; padding:80px 20px; }
-  #contact h2 { color:#fff; }
-  #contact p { color:#ccc; margin-bottom:2rem; font-size:1.2rem; }
-  #contact .btn { background:#fff; color:#111; }
-  #contact .btn:hover { background:#eee; }
+footer { text-align:center; padding:30px 20px; font-size:14px; color:#666; background:#f9f9f9; }
 
-  footer { text-align:center; padding:30px 20px; font-size:14px; color:#666; background:#f9f9f9; }
-
-  @media(max-width:768px){
-    header h1 { font-size:2.25rem; }
-    header p { font-size:1rem; }
-    .process { flex-direction:column; }
-  }
+@media(max-width:768px){
+  header h1 { font-size:2.25rem; }
+  header p { font-size:1rem; }
+  .process { flex-direction:column; }
+}
 </style>
 </head>
 <body>
 
-  <!-- HEADER -->
-  <header>
-    <div>
-      <h1>Tribe Agency</h1>
-      <p>Helping startups scale with growth marketing, strategic advisory, and financial discipline.</p>
-      <a href="#contact" class="btn">Book a free call</a>
+<!-- HEADER -->
+<header>
+  <div>
+    <h1>Tribe Agency</h1>
+    <p>Helping startups scale with growth marketing, strategic advisory, and financial discipline.</p>
+    <a href="#contact" class="btn">Book a free call</a>
+  </div>
+</header>
+
+<!-- WHAT WE DO -->
+<section>
+  <h2>What We Do</h2>
+  <p class="lead">We partner with high-growth tech and Web3 companies to deliver measurable results through marketing, strategy, and capital efficiency.</p>
+  <div class="grid">
+    <div class="card">
+      <strong>Marketing Execution</strong>
+      <p>Campaigns that convert leads into revenue. From paid ads to inbound, we make marketing measurable and scalable.</p>
     </div>
-  </header>
-
-  <!-- WHAT WE DO -->
-  <section>
-    <h2>What We Do</h2>
-    <p class="lead">We partner with high-growth tech and Web3 companies to deliver measurable results through marketing, strategy, and capital efficiency.</p>
-    <div class="grid">
-      <div class="card">
-        <strong>Marketing Execution</strong>
-        <p>Campaigns that convert leads into revenue. From paid ads to inbound, we make marketing measurable and scalable.</p>
-      </div>
-      <div class="card">
-        <strong>Strategic Advisory</strong>
-        <p>Roadmaps and decisions that drive growth. Aligning teams and optimizing strategy for sustainable expansion.</p>
-      </div>
-      <div class="card">
-        <strong>Financial Discipline</strong>
-        <p>Optimizing budgets, improving cash flow, and allocating resources efficiently to support predictable growth.</p>
-      </div>
+    <div class="card">
+      <strong>Strategic Advisory</strong>
+      <p>Roadmaps and decisions that drive growth. Aligning teams and optimizing strategy for sustainable expansion.</p>
     </div>
-  </section>
-
-  <!-- OUR PROCESS -->
-  <section style="background:#f9f9f9;">
-    <div class="process">
-      <div class="process-text">
-        <h3>Our Process</h3>
-        <p>We follow a repeatable framework to help startups scale efficiently.</p>
-        <ol>
-          <li><strong>Audit & Strategy:</strong> Understand your business and ICP.</li>
-          <li><strong>Launch & Test:</strong> Execute acquisition channels.</li>
-          <li><strong>Optimize Weekly:</strong> Iterate based on real data.</li>
-          <li><strong>Scale:</strong> Grow with predictable results.</li>
-        </ol>
-      </div>
-      <div class="process-img">
-        <img src="images/pexels-weekendplayer-187041.jpg" alt="Process illustration">
-      </div>
+    <div class="card">
+      <strong>Financial Discipline</strong>
+      <p>Optimizing budgets, improving cash flow, and allocating resources efficiently to support predictable growth.</p>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- CLIENT LOGOS -->
-  <section>
-    <h2>Trusted by</h2>
-    <div class="logos">
-      <img src="images/logo1.png" alt="Client Logo">
-      <img src="images/logo2.png" alt="Client Logo">
-      <img src="images/logo3.png" alt="Client Logo">
-      <img src="images/logo4.png" alt="Client Logo">
+<!-- OUR PROCESS -->
+<section id="our-process">
+  <div class="process">
+    <div class="process-text">
+      <h3>Our Process</h3>
+      <p>We follow a repeatable framework to help startups scale efficiently.</p>
+      <ol>
+        <li><strong>Audit & Strategy:</strong> Understand your business and ICP.</li>
+        <li><strong>Launch & Test:</strong> Execute acquisition channels.</li>
+        <li><strong>Optimize Weekly:</strong> Iterate based on real data.</li>
+        <li><strong>Scale:</strong> Grow with predictable results.</li>
+      </ol>
     </div>
-  </section>
+    <div class="process-img">
+      <img src="images/pexels-weekendplayer-187041.jpg" alt="Process illustration">
+    </div>
+  </div>
+</section>
 
-  <!-- CONTACT -->
-  <section id="contact">
-    <h2>Ready to grow?</h2>
-    <p>Book a 30‑minute strategy call and get a tailored plan for your startup.</p>
-    <a href="https://calendly.com/luccixbt/one-one-meeting" class="btn">Book a free call</a>
-  </section>
+<!-- CLIENT LOGOS -->
+<section>
+  <h2>Trusted by</h2>
+  <div class="logos">
+    <img src="images/logo1.png" alt="Client Logo">
+    <img src="images/logo2.png" alt="Client Logo">
+    <img src="images/logo3.png" alt="Client Logo">
+    <img src="images/logo4.png" alt="Client Logo">
+  </div>
+</section>
 
-  <footer>
-    © 2025 Tribe Agency — All rights reserved
-  </footer>
+<!-- CONTACT -->
+<section id="contact">
+  <h2>Ready to grow?</h2>
+  <p>Book a 30‑minute strategy call and get a tailored plan for your startup.</p>
+  <a href="https://calendly.com/luccixbt/one-one-meeting" class="btn">Book a free call</a>
+</section>
+
+<footer>
+  © 2025 Tribe Agency — All rights reserved
+</footer>
 
 </body>
 </html>
