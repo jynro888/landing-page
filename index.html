@@ -17,7 +17,7 @@ html, body {
 }
 a { text-decoration:none; }
 
-/* HEADER avec <img> pour full image */
+/* HEADER avec <img> et overlay */
 header {
   position: relative;
   width: 100%;
@@ -25,11 +25,21 @@ header {
   justify-content:center;
   align-items:center;
 }
-header img.hero-img {
+
+.hero-img {
   width: 100%;
   height: auto; /* garde le ratio original */
   display: block;
 }
+
+/* Overlay pour assombrir l'image */
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0,0,0,0.35); /* ajuster l'opacité si besoin */
+  z-index:1;
+}
+
 .hero-text {
   position: absolute;
   top:50%;
@@ -39,6 +49,7 @@ header img.hero-img {
   color:#fff;
   max-width:900px;
   padding:0 20px;
+  z-index:2; /* au-dessus de l'overlay */
 }
 .hero-text h1 { font-size:3rem; line-height:1.2; margin-bottom:1rem; }
 .hero-text p { font-size:1.25rem; margin-bottom:2rem; }
@@ -108,6 +119,7 @@ footer { text-align:center; padding:30px 20px; font-size:14px; color:#666; backg
 <!-- HEADER -->
 <header>
   <img src="images/header the tribe.png" alt="Hero Image" class="hero-img">
+  <div class="hero-overlay"></div>
   <div class="hero-text">
     <h1>Tribe Agency</h1>
     <p>Helping startups scale with growth marketing, strategic advisory, and financial discipline.</p>
