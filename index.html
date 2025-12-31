@@ -7,9 +7,17 @@
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
 
-body, html { margin:0; padding:0; font-family:'Inter', sans-serif; scroll-behavior:smooth; color:#111; width:100%; }
+html, body {
+  margin:0;
+  padding:0;
+  width:100%;
+  font-family:'Inter', sans-serif;
+  scroll-behavior:smooth;
+  color:#111;
+}
 a { text-decoration:none; }
 
+/* HEADER */
 header {
   height:100vh;
   display:flex;
@@ -28,18 +36,18 @@ header::before {
   background: rgba(0,0,0,0.45);
   z-index:0;
 }
-header > * { position:relative; z-index:1; max-width:900px; padding:0 20px; }
+header > * { position:relative; z-index:1; max-width:900px; padding:0 20px; margin:0; }
 header h1 { font-size: 3rem; line-height:1.2; margin-bottom:1rem; }
 header p { font-size:1.25rem; margin-bottom:2rem; }
 .btn { padding:14px 28px; background:#fff; color:#111; border-radius:6px; font-weight:600; transition:0.3s; display:inline-block; }
 .btn:hover { background:#eee; }
 
-/* Sections */
+/* SECTIONS */
 section { padding:80px 20px; width:100vw; box-sizing:border-box; }
 h2 { text-align:center; font-size:2.25rem; margin-bottom:1rem; }
 p.lead { text-align:center; font-size:1.15rem; max-width:800px; margin:0 auto 2rem auto; line-height:1.5; }
 
-/* Cards */
+/* CARDS */
 .grid { display:grid; grid-template-columns: repeat(auto-fit,minmax(280px,1fr)); gap:24px; margin-top:40px; }
 .card {
   background:#fff;
@@ -51,8 +59,18 @@ p.lead { text-align:center; font-size:1.15rem; max-width:800px; margin:0 auto 2r
 .card:hover { transform:translateY(-6px); box-shadow:0 12px 24px rgba(0,0,0,0.08); }
 .card strong { display:block; font-size:1.25rem; margin-bottom:10px; }
 
-/* Our Process */
-#our-process { background-color: #d8f0e1; padding:100px 20px; }
+/* OUR PROCESS - VERT ANCIEN + TEXTURE */
+#our-process {
+  background-color: #a3bfa0; /* vert ancien */
+  background-image: repeating-linear-gradient(
+    45deg,
+    rgba(255,255,255,0.03) 0,
+    rgba(255,255,255,0.03) 1px,
+    transparent 1px,
+    transparent 4px
+  ); /* texture légère */
+  padding:100px 20px;
+}
 .process { display:flex; flex-wrap:wrap; align-items:center; gap:40px; max-width:1200px; margin:auto; }
 .process-text { flex:1; min-width:320px; }
 .process-text h3 { font-size:1.75rem; margin-bottom:1rem; }
@@ -60,18 +78,19 @@ p.lead { text-align:center; font-size:1.15rem; max-width:800px; margin:0 auto 2r
 .process-img { flex:1; min-width:320px; }
 .process-img img { width:100%; border-radius:12px; }
 
-/* Client logos */
+/* CLIENT LOGOS */
 .logos { display:flex; flex-wrap:wrap; justify-content:center; align-items:center; gap:40px; margin-top:40px;}
 .logos img { max-height:50px; object-fit:contain; filter: grayscale(1); opacity:0.7; transition:0.3s; }
 .logos img:hover { filter:none; opacity:1; }
 
-/* Contact */
+/* CONTACT */
 #contact { text-align:center; background:#111; color:#fff; padding:80px 20px; }
 #contact h2 { color:#fff; }
 #contact p { color:#ccc; margin-bottom:2rem; font-size:1.2rem; }
 #contact .btn { background:#fff; color:#111; }
 #contact .btn:hover { background:#eee; }
 
+/* FOOTER */
 footer { text-align:center; padding:30px 20px; font-size:14px; color:#666; background:#f9f9f9; }
 
 @media(max-width:768px){
